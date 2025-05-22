@@ -8,43 +8,43 @@ MY_ARM_MODE := arm
 
 include $(CLEAR_VARS)
 LOCAL_ARM_MODE := $(MY_ARM_MODE)
-LOCAL_MODULE := libavcodec
-LOCAL_SRC_FILES := libavcodec.so
+LOCAL_MODULE := libavcodec-fk
+LOCAL_SRC_FILES := libavcodec-fk.so
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_ARM_MODE := $(MY_ARM_MODE)
-LOCAL_MODULE := libavfilter
-LOCAL_SRC_FILES := libavfilter.so
+LOCAL_MODULE := libavfilter-fk
+LOCAL_SRC_FILES := libavfilter-fk.so
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_ARM_MODE := $(MY_ARM_MODE)
-LOCAL_MODULE := libavdevice
-LOCAL_SRC_FILES := libavdevice.so
+LOCAL_MODULE := libavdevice-fk
+LOCAL_SRC_FILES := libavdevice-fk.so
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_ARM_MODE := $(MY_ARM_MODE)
-LOCAL_MODULE := libavformat
-LOCAL_SRC_FILES := libavformat.so
+LOCAL_MODULE := libavformat-fk
+LOCAL_SRC_FILES := libavformat-fk.so
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_ARM_MODE := $(MY_ARM_MODE)
-LOCAL_MODULE := libavutil
-LOCAL_SRC_FILES := libavutil.so
+LOCAL_MODULE := libavutil-fk
+LOCAL_SRC_FILES := libavutil-fk.so
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_PATH)/../include
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_ARM_MODE := $(MY_ARM_MODE)
-LOCAL_MODULE := libswresample
-LOCAL_SRC_FILES := libswresample.so
+LOCAL_MODULE := libswresample-fk
+LOCAL_SRC_FILES := libswresample-fk.so
 include $(PREBUILT_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 LOCAL_ARM_MODE := $(MY_ARM_MODE)
-LOCAL_MODULE := libswscale
-LOCAL_SRC_FILES := libswscale.so
+LOCAL_MODULE := libswscale-fk
+LOCAL_SRC_FILES := libswscale-fk.so
 include $(PREBUILT_SHARED_LIBRARY)

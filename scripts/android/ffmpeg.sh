@@ -471,6 +471,8 @@ fi
   --disable-nvenc \
   --disable-vaapi \
   --disable-vdpau \
+  --install-name-dir="${FFMPEG_LIBRARY_PATH}/lib" \
+  --build-suffix="-fk" \
   ${CONFIGURE_POSTFIX} 1>>"${BASEDIR}"/build.log 2>&1
 
 if [[ $? -ne 0 ]]; then
@@ -506,6 +508,20 @@ make install 1>>"${BASEDIR}"/build.log 2>&1
 if [[ $? -ne 0 ]]; then
   echo -e "failed\n\nSee build.log for details\n"
   exit 1
+fi
+
+# Rename the library files to use -fk suffix
+cd "${FFMPEG_LIBRARY_PATH}/lib" || return 1
+for lib in libavcodec.so*; do
+  if [ -f "$lib" ]; then
+    new_name=$(echo "$lib" | sed 's/libavcodec/libavcodec-fk/g')
+    mv "$lib" "$new_name"
+  fi
+done
+
+# Update library symlinks if they exist
+if [ -L libavcodec.so ]; then
+  ln -sf libavcodec-fk.so.* libavcodec-fk.so
 fi
 
 # MANUALLY ADD REQUIRED HEADERS
